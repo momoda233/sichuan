@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="zh" class="no-js">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>天府之绝</title>
+	<link rel="icon" type="image/x-icon" href="images/shu.ico">
+
+	<link rel="stylesheet" href="css/Opera.css">
+	<link rel="stylesheet" href="css/menu.css">
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/menu.js"></script>
+	<script src="js/modernizr.js"></script>
+</head>
+
+<body>
+
+	<section class="cd-fixed-background img-1" data-type="slider-item">
+		<h1 id="headline">中华传统川剧元素<span>——</span>变脸</h1>
+		<div class="cd-content first">
+			<!-- <div class="back"></div> -->
+			<p>独具四川特色的元素——川剧变脸。丰富而绝妙的表演技巧不仅能让人惊叫连连，这项历史悠久的中国国粹也能让他们感受到中国传统戏剧的文化魅力。活脱脱一副面孔，热辣辣一丝震颤，疾如风快如电，精妙绝伦……</p>
+		</div>
+		<img src="./images/opera/opera-1.jpg" alt="" class="content-img-1">
+
+	</section>
+
+	<section class="cd-fixed-background img-2" data-type="slider-item">
+		<div class="cd-content second">
+			<!-- <img src="./images/opera/opera-3.jpg" alt="" class="content-img-2"> -->
+			<h1 id="headline-2">变<span>脸</span>起源</h1>
+			<p id="p-2">相传“变脸”最开始的起源是，古代人类面对凶猛的野兽时，为了生存把自己脸部用不同的方式勾画出不同形态，以吓唬入侵的野兽。后来，川剧把“变脸”搬上舞台，用绝妙的技巧使它成为一门独特的艺术。</p>
+		</div>
+
+	</section>
+
+	<section class="cd-fixed-background img-3" data-type="slider-item">
+		<div class="cd-content third">
+			<h2 id="headline-3">变脸之<span>四种魔法</span></h2>
+			<p><span>吹脸</span>，一般是指粉末状的变脸。</p>
+			<p><span>抹脸</span>，可以部分变脸也可以全部变脸。</p>
+			<p><span>扯脸</span>，一种复杂的变脸，事先将每张脸谱贴在脸上，一张张将脸谱取下从而完成变脸。</p>
+			<p><span>运气变脸</span>，是表演者在演出时利用气功表演出的一种变脸，现在能掌握这个方法的人屈指可数，算是一门失传的绝技。</p>
+		</div>
+	</section>
+
+	<section class="cd-fixed-background img-4" data-type="slider-item">
+		<div class="cd-content forth">
+			<h2>川剧脸谱的魅力 <span style="font-family:'kaiti'">——</span> <span>独特性</span></h2>
+			<p><span>川剧变脸</span>用于揭示剧中人物的内心及思想感情的变化，是表现戏剧中人物内心思想感情的浪漫主义手法,
+				也是我国第一批非物质文化遗产，更是历代川剧艺术家创造出的艺术瑰宝。</p>
+			<p>我们要以开放的心态对待变脸艺术，不断改进器材，技艺，建立良好的传承交流机制，规范演出市场，才能保持<span>川剧变脸</span>长久生命力。</p>
+
+		</div>
+	</section>
+
+	<a href="#cd-nav" class="cd-nav-trigger">
+		Menu<span>
+			<!-- used to create the menu icon --></span>
+	</a> <!-- .cd-nav-trigger -->
+
+
+	<nav class="cd-nav-container" id="cd-nav">
+		<a href="#0" class="cd-close-nav">Close</a>
+		<header>
+			<a href="index-1.html" class="index">
+				<!-- <h3 >首页</h3> -->
+				<h3>天府之国</h3>
+			</a>
+
+		</header>
+
+		<ul class="cd-nav">
+			<li data-menu="history" id="history">
+				<a href="#0">
+					<img src="./images/index/001.png" alt="">
+					<strong>天府之源</strong>
+				</a>
+			</li>
+
+			<li data-menu="opera" id="opera" class="cd-selected">
+				<a href="Opera.html">
+					<img src="./images/index/002.png" alt="">
+					<strong>天府之绝</strong>
+				</a>
+			</li>
+
+			<li data-menu="services" id="foods">
+				<a href="foods.html">
+					<img src="./images/index/004.png" alt="">
+					<strong>天府之味</strong>
+				</a>
+			</li>
+
+			<li data-menu="contact" id="landspace">
+				<a href="landspace.html">
+					<img src="./images/index/003.png" alt="">
+					<strong>天府之秀</strong>
+				</a>
+			</li>
+			<!-- <li data-menu="contact"  id="music">
+		<a href="index-1.html#box-3">
+		  <div>
+			<strong>天府之韵</strong>
+			<span>
+			</span>
+		  </div>
+		</a>
+	  </li> -->
+		</ul>
+
+
+	</nav>
+</body>
+<script>
+	document.getElementById("history").onclick = function () {
+		window.location.href = "history.html";
+	}
+	document.getElementById("opera").onclick = function () {
+		window.location.href = "Opera.html";
+	}
+	document.getElementById("foods").onclick = function () {
+		window.location.href = "foods.html";
+	}
+	document.getElementById("landspace").onclick = function () {
+		window.location.href = "landspace.html";
+	}
+	/**
+	 * 分辨率宽度小于1400时
+	 * @type {number}
+	 */
+	var windowsWidth = window.screen.width; //屏幕分辨率高度
+	if (windowsWidth > 1400) {
+		$(function () {
+
+			// $('#headline-2').hide();
+			$('#p-2').hide();
+			// $('#headline-3').hide();
+			$('.third p').hide();
+			$('.forth p').hide();
+			// $('.forth h2').hide();
+			$(function () {
+				$(window).scroll(function () {
+					if ($(window).scrollTop() > 500) {
+						// $('#headline').hide();
+						$('.first').fadeOut(1000);
+						$('.content-img-1').fadeOut(1000);
+					}
+					if ($(window).scrollTop() < 500) {
+						$('#headline').fadeIn(1500);
+						$('.first').fadeIn(1500);
+						$('.content-img-1').fadeIn(1500);
+					}
+					if ($(window).scrollTop() > 300 && $(window).scrollTop() < 1300) {
+						// $('#headline-2').fadeIn(1500);
+						$('#p-2').fadeIn(1500);
+					}
+					if ($(window).scrollTop() < 300 || $(window).scrollTop() > 1300) {
+						// $('#headline-2').fadeOut(1500);
+						$('#p-2').fadeOut(1500);
+					}
+
+					if ($(window).scrollTop() > 1300 && $(window).scrollTop() < 2000) {
+						// $('#headline-3').fadeIn(1000);
+						$('.third p').fadeIn(1500);
+					}
+					if ($(window).scrollTop() < 1300 || $(window).scrollTop() > 2000) {
+						// $('#headline-3').fadeOut(1000);
+						$('.third p').fadeOut(1500);
+					}
+					if ($(window).scrollTop() > 2000 && $(window).scrollTop() < 3300) {
+						// $('.forth h2').fadeIn(1500);
+						$('.forth p').fadeIn(1500);
+					}
+					if ($(window).scrollTop() < 2000 || $(window).scrollTop() > 3300) {
+						// $('.forth h2').fadeOut(1500);
+						$('.forth p').fadeOut(1500);
+					}
+
+				});
+
+			})
+		})
+	} else {
+		$(function () {
+
+			// $('#headline-2').hide();
+			$('#p-2').hide();
+			// $('#headline-3').hide();
+			$('.third p').hide();
+			$('.forth p').hide();
+			// $('.forth h2').hide();
+			$(function () {
+				$(window).scroll(function () {
+					if ($(window).scrollTop() > 500) {
+						// $('#headline').hide();
+						$('.first').fadeOut(1000);
+						$('.content-img-1').fadeOut(1000);
+					}
+					if ($(window).scrollTop() < 500) {
+						$('#headline').fadeIn(1500);
+						$('.first').fadeIn(1500);
+						$('.content-img-1').fadeIn(1500);
+					}
+					if ($(window).scrollTop() > 300 && $(window).scrollTop() < 1200) {
+						// $('#headline-2').fadeIn(1500);
+						$('#p-2').fadeIn(1500);
+					}
+					if ($(window).scrollTop() < 300 || $(window).scrollTop() > 1200) {
+						// $('#headline-2').fadeOut(1500);
+						$('#p-2').fadeOut(1500);
+					}
+
+					if ($(window).scrollTop() > 1200 && $(window).scrollTop() < 1800) {
+						// $('#headline-3').fadeIn(1000);
+						$('.third p').fadeIn(1500);
+					}
+					if ($(window).scrollTop() < 1200 || $(window).scrollTop() > 1800) {
+						// $('#headline-3').fadeOut(1000);
+						$('.third p').fadeOut(1500);
+					}
+					if ($(window).scrollTop() > 1800 && $(window).scrollTop() < 3000) {
+						// $('.forth h2').fadeIn(1500);
+						$('.forth p').fadeIn(1500);
+					}
+					if ($(window).scrollTop() < 1800 || $(window).scrollTop() > 3000) {
+						// $('.forth h2').fadeOut(1500);
+						$('.forth p').fadeOut(1500);
+					}
+
+				});
+
+			})
+		})
+	}
+</script>
+
+</html>

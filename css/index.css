@@ -1,0 +1,179 @@
+/*整个主页的特效的css*/
+*{
+  margin: 0 auto;
+  padding: 0;
+}
+
+body {
+  font-size: 100%;
+  font-family: "楷体", sans-serif;
+  color: #3d3536;
+  background-color: white;
+}
+
+body, html {
+  height: 100%;
+}
+
+*,html,body{
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+html{
+    height: 100%;
+    overflow-y: auto;
+        scroll-snap-type: y mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  *, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+#return-top{
+  position: fixed;
+  bottom: 5%;
+  right: 3%;
+  width: 9%;
+  /* height: 1%; */
+  /* background-color: #eee; */
+  /* text-align: center; */
+  display: none;
+  /* z-index: 99; */
+}
+#return-top a{
+  text-decoration: none;
+}
+
+section {
+  position: relative;
+  min-height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: -2;
+  background-attachment: fixed;
+  /* text-align: center; */
+    display: -webkit-box;
+  display: flex;
+margin: auto;
+align-items: center;
+-webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  height: 100vh;
+  scroll-snap-align: start;
+
+}
+/* h1和h2大文字部分 */
+.fixed h1, .fixed h2 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  /* text-align: center; */
+  bottom: auto;
+  right: auto;
+  transform: translateX(-50%) translateY(-50%);
+  width: 100%;
+  max-width: 1170px;/*h1h2的文字宽度限定*/
+  text-align: center;
+  font-weight: 200;
+  font-size: 70px;
+  text-shadow: 0 10px 3px rgba(0, 0, 0, 0.3);
+  color: white;
+}
+.logo{
+  position: absolute;
+  top: 110px;
+  right: 30px;
+  width: 10%;
+  z-index: 2;
+}
+
+#logo-2,#logo-3{
+  top: 600px;
+  right: 0px;
+  width: 12%;
+  z-index: 5;
+}
+#logo-4{
+  top: 40px;
+  left: 30px;
+  width: 15%;
+  z-index: 5;
+}
+#logo-6{
+  top: 50px;
+  right: 50px;
+  width: 15%;
+  z-index: 5;
+}
+/* 背景图固定 */
+.fixed.bg-1 {
+  background-image: url("../images/index/01.jpg");
+  /* background-position:left; */
+  background-size: 100%;
+}
+.fixed.bg-2 {
+  background-image: url("../images/index/01.jpg");
+}
+.fixed.bg-3 {
+  background-image: url("../images/index/13.jpg");
+}
+.fixed.bg-4 {
+  background-image: url("../images/index/01.jpg");
+}
+
+.fixed.bg-5 {
+  background-image: url("../images/index/01.jpg");
+}
+
+/*第五页的诗歌合集*/
+
+
+
+/*第三页的image设计*/
+
+
+
+
+.pause {
+  background-position: 0 bottom !important;
+}
+#mscBtn {
+  position: fixed;
+  left: 3%;
+  top: 7%;
+  width: 3%;
+  display: block;
+  z-index: 3;
+}
+
+#img-4{
+  border-radius: 50%;
+  z-index: 1;
+ 
+}
+
+
+
+.container{
+  width: 90%;
+  max-width: 768px;
+  margin: 0 auto;
+}
+.container::after {
+  /* clearfix */
+  content: '';
+  display: table;
+  clear: both;
+}
+.main-content{
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}

@@ -1,0 +1,245 @@
+
+*, *::after, *::before {
+    box-sizing: border-box;
+  }
+ 
+  @font-face{
+    font-family: FifthFontName;
+    src: url(../font/MaShanZheng-Regular.ttf)
+  }
+  html, body {
+    height: 100%;
+  }
+  ::-webkit-scrollbar{
+    width: 0;
+}
+  *,html,body{
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+}
+
+
+
+html{
+    height: 100vh;
+    overflow-y: auto;
+        scroll-snap-type: y mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  section {
+    height: 100vh;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+            align-items: center;
+    scroll-snap-align: start;
+  }
+
+  .cd-fixed-background {
+    position: relative;
+    padding: 3em 5% 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+  
+  .cd-fixed-background .cd-content::after {
+    /* phone image on small devices */
+    content: '';
+    display: block;
+    width: 100%;
+    padding: 60% 0;
+    margin: 2em auto 0;
+  }
+
+    .cd-fixed-background {
+      height: 100%;
+      padding: 0;
+      background-attachment: fixed;
+    }
+
+    .cd-fixed-background .cd-content {
+      width: 60%;
+      height: 60%;
+      position: absolute;
+      left: 5%;
+      top: 50%;
+      bottom: auto;
+      background: transparent;
+      transform: translateY(-50%);
+      
+    }
+    .cd-fixed-background .cd-content::after {
+      display: none !important;
+    }
+    .cd-fixed-background.img-1 {
+      background-image: url("../images/opera/Opera-1.png");
+    }
+    .cd-fixed-background.img-2 {
+      background-image: url("../images/opera/Opera-2.png");
+    }
+    .cd-fixed-background.img-3 {
+      background-image: url("../images/opera/Opera-3.png");
+    }
+    .cd-fixed-background.img-4 {
+      background-image: url("../images/opera/Opera-4.png");
+    }
+
+    #headline,#headline-2,#headline-3,#heading-4{
+      font-family: fifthfontname;
+      font-size: 65px;
+      color: rgb(220, 220, 220);
+      width: 70%;
+      position: absolute;
+      top: 5%;
+      left: 2%;
+    }
+    #headline-2{
+      color: rgb(255, 255, 255);
+      top: -15%;
+      left: -2%
+    }
+    #headline-3{
+      color: rgb(255, 255, 255);
+      top: -15%;
+      left: -3%;
+    }
+    #headline-4{
+      color: rgb(255, 255, 255);
+      top: -25%;
+      left: 20%;
+    }
+    #headline-2 span{
+      color: rgb(148,76,60);
+      
+    }
+    #headline-3 span{
+      color: rgb(76,128,173);
+      
+    }
+    #headline span{
+        font-family: "kaiti";
+    }
+
+    .cd-content.first p{
+      color: rgb(220, 220, 220);
+      font-size: 30px;
+      position: absolute;
+      left: -2%;
+      top: -0px;
+      width: 82%;
+      text-indent: 2em;
+      letter-spacing: 5px;
+      line-height: 1.5em;
+      font-family: fifthfontname;
+    }
+   
+   
+    .content-img-1{
+      width: 45%;
+      position: absolute;
+      left: 70px;
+      bottom: 25px;
+      border-radius: 10px;
+    }
+    .cd-content.second p{
+      font-size: 34px;
+      position: absolute;
+      width: 80%;
+      left: -3%;
+      top: 50%;
+      text-indent: 2em;
+      line-height: 1.5em;
+      font-family: fifthfontname;
+    }
+   
+    #p-2{
+      color: rgb(220, 220, 220);
+      top: 20%;
+    }
+    .content-img-2{
+      width: 45%;
+      position: absolute;
+      left: -20px;
+      top: -130px;
+      border-radius: 10px;
+    }
+    .cd-content.third p{
+      position: relative;
+      width: 80%;
+      top: 60px;
+      left: -3%;
+      margin: 15px 0 0 0;
+      font-size: 32px;
+      letter-spacing: 5px;
+      line-height: 1.25em;
+      font-family: fifthfontname;
+      color: rgb(220, 220, 220);
+    }
+    .cd-content.third p span{
+      color:rgb(76,128,173) ;
+      font-size: 30px ;
+      font-weight: 600;
+    }
+
+    
+    .cd-content.forth p{
+      position: relative;
+      width: 81%;
+      top: 5%;
+      left: -3%;
+      letter-spacing: 5px;
+      margin: 15px 0 20px 0;
+      font-size: 32px;
+      color: rgb(220, 220, 220);
+      line-height: 1.25em;
+      text-indent: 2em;
+      font-family: fifthfontname;
+    }
+    .cd-content.forth h2 {
+      position: relative;
+      left: -3%;
+      top: -40px;
+      font-size: 56px;
+      font-weight: 600;
+      font-family: fifthfontname;
+      color: white;
+      letter-spacing: 10px;
+
+    }
+    .cd-content.forth h2 :nth-of-type(2){
+            color:rgb(197,184,120)
+    }
+    
+    .cd-content.forth p span{
+      color:rgb(197,184,120);
+      font-size: 30px ;
+      font-weight: 600;
+    }
+    @media screen and (max-width: 1400px) {
+      #headline,#headline-2,#headline-3,#heading-4{
+        font-size:60px ;
+      }
+      .cd-content.first p{
+        font-size: 24px;
+      }
+      .cd-content.second p{
+        font-size: 30px;
+      }
+      .cd-content.third p{
+        position: relative;
+        width: 80%;
+        top: 40px;
+        font-size: 30px;
+      }
+      .cd-content.forth p{
+        font-size: 28px;
+      }
+      .cd-content.forth h2{
+        font-size: 50px;
+        letter-spacing: 5px;
+      }
+    }

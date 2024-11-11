@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: FifthFontName;
+    src: url(../font/MaShanZheng-Regular.ttf)
+}
+
+body {
+    background: #000;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: center; */
+    overflow: hidden;
+    /* padding: 100px; */
+}
+
+section video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+#header {
+    animation: header 1s 4.75s forwards;
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+    cursor: default;
+    display: inline-block;
+    opacity: 0;
+    position: absolute;
+    left: 26%;
+    top: 15%;
+    text-align: center;
+    vertical-align: middle;
+    width: 50%;
+    height: 60%;
+    z-index: 2;
+}
+
+@keyframes header {
+    0% {
+        transform: translate3d(0, 1em, 0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0);
+        opacity: 0.8;
+    }
+}
+
+#up {
+    color: seashell;
+    font-size: 32px;
+    position: absolute;
+    top: 175px;
+    left: 205px;
+    font-family: fifthfontname;
+    letter-spacing: 3px;
+}
+
+.box {
+    border-radius: 3px;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: fifthfontname;
+    width: 250px;
+    height: 60px;
+    position: absolute;
+    left: 248px;
+    top: 330px;
+    letter-spacing: 10px;
+    text-align: center;
+    /* background-color: white; */
+    color: white;
+    border: 3px solid white;
+    padding: 10px 5px 5px 7px;
+    border-radius: 4px;
+}
+
+a,
+a:visited,
+a:active {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(139, 139, 139);
+}
+
+hr {
+    width: 54%;
+    height: 2%;
+    position: absolute;
+    top: 200px;
+    left: 160px;
+    background: snow;
+}
+
+hr:nth-of-type(2) {
+    position: absolute;
+    top: 430px;
+    width: 54%;
+    left: 160px;
+}
+
+.index-logo{
+    width: 70%;
+  }
+.next-img {
+    display: block;
+    position: absolute;
+    top: 510px;
+    left: 48.4%;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    border: none;
+    background: url("../images/cd-icon-arrow.svg") no-repeat center center;
+    visibility: hidden;
+    transform: translateX(-50%) scale(0);
+    transition: transform 0.3s 0s, visibility 0s 0.3s;
+    z-index: 6;
+    backface-visibility: hidden;
+
+}
+/* #index{
+    transition: ease color 1s,ease border 1s;
+
+} */
+/* #index:hover{
+    cursor: pointer;
+    color: rgb(255, 255, 255,0.5);
+    border: 3px solid rgb(255, 255, 255,0.5);
+} */
+
+
+.next-img:focus {
+    outline: none;
+}
+
+.cd-projects-container.project-open .scroll {
+    visibility: visible;
+    transform: translateX(-50%) scale(1);
+    transition: transform 0.4s 0s, visibility 0s 0s;
+    animation: cd-translate 1.2s 0.8s;
+    animation-iteration-count: 2;
+}
+
+.no-touch .cd-projects-container.project-open .scroll:hover {
+    transform: translateX(-50%) scale(1.2);
+}
+
+.next-img.cd-text-replace {
+    visibility: visible;
+    transform: translateX(-50%) scale(1);
+    transition: transform 0.4s 0s, visibility 0s 0s;
+    animation: cd-translate 1.2s 0.8s;
+    animation-iteration-count: 2;
+}
+
+.next-img:hover {
+    transform: translateX(-50%) scale(1.2);
+}
+
+@media screen and (max-width: 1400px) {
+    #up {
+        top: 235px;
+        left: 164px;
+    }
+
+    .box {
+        left: 208px;
+        top: 300px;
+    }
+
+    .next-img {
+        top: 380px;
+    }
+
+
+}
+@media screen and (max-width: 500px) {
+    section video {
+        position: absolute;
+        top: 0;
+        left: -50%;
+        width: 200%;
+        height: 100%;
+        object-fit:contain;
+    }
+    #up {
+        font-size: 28px;
+        width: 310px;
+        left: -70px;
+        top: 235px;
+    }
+
+    .box {
+        left: -40px;
+        top: 330px;
+        border: 0px;
+        font: size 16px ;
+    }
+    .index-logo {
+        width: 150%;
+        position: absolute;
+        left: -45px;
+        top: 125px;
+    }
+    .next-img {
+        top: 410px;
+    }
+
+}

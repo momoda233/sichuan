@@ -1,0 +1,353 @@
+
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+  }
+
+  @font-face{
+    font-family: FifthFontName;
+    src: url(../font/MaShanZheng-Regular.ttf)
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  ul{
+    list-style: none;
+  }
+  ::-webkit-scrollbar{
+    width: 0px;
+  }  
+
+  .cd-nav-trigger {
+    /* hamburger icon */
+    position: fixed;
+    z-index: 3;
+    top: 5px;
+    right: 5%;
+    height: 44px;
+    width: 44px;
+    /* image replacement */
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+    transition: transform 0.2s;
+    overflow-x: hidden;
+
+  }
+  .cd-nav-trigger span {
+    /* icon created in CSS */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    transform: translateX(-50%) translateY(-50%);
+    width: 32px;
+    height: 3px;
+    background: white;
+
+  }
+  .cd-nav-trigger span::before, .cd-nav-trigger span:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+     transform: translateZ(0);
+    backface-visibility: hidden;
+    transition: transform 0.2s, width 0.2s;
+  }
+  .cd-nav-trigger span::before {
+     transform-origin: right top;
+     transform: translateY(-10px);
+  }
+  .cd-nav-trigger span::after {
+      transform-origin: right bottom;
+    transform: translateY(10px);
+  }
+  .no-touch .cd-nav-trigger:hover {
+    /* rotate trigger on hover */
+      transform: rotate(90deg);
+  }
+  .no-touch .cd-nav-trigger:hover span::after,
+  .no-touch .cd-nav-trigger:hover span::before {
+    width: 50%;
+  }
+  .no-touch .cd-nav-trigger:hover span::before {
+     transform: translateX(1px) translateY(1px) rotate(45deg);
+  }
+  .no-touch .cd-nav-trigger:hover span::after {
+    transform: translateX(1px) translateY(-1px) rotate(-45deg);
+  }
+  
+
+  .cd-nav-container {
+    position: fixed;
+    z-index: 4;
+    top: -1px;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background-color: rgba(19, 19, 19, 0.9);
+    /* Force Hardware Acceleration in WebKit */
+     transform: translateZ(0);
+    backface-visibility: hidden;
+    transform: translateY(-100%);
+     transition: transform 0.4s 0s, box-shadow 0s 0.4s;
+  }
+  .cd-nav-container.is-visible {
+       transform: translateY(0);
+    -webkit-overflow-scrolling: touch;
+    box-shadow: -4px 0 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s 0s, box-shadow 0s 0s;
+  }
+  .cd-nav-container header {
+    /* padding: 1.5em 0 0 6.25%; */
+    /* height: 100px; */
+    position: absolute;
+   left: 05%;
+    top:25%;
+    /* background-position:center; */
+  }
+  .cd-nav-container h3 {
+    font-size: 32px;
+    font-weight: bold;
+    font-family: fifthfontname;
+    text-transform: uppercase;
+    color: rgb(204,174,97);
+    text-align: center;
+    position: relative;
+    top:0px;
+  }
+  #index :first-child {
+    color: rgb(117,50,57,0.8);
+    font-weight: 500;
+    position: relative;
+    top: -20px;
+  }
+
+  @media only screen and (min-width: 700px) {
+    .cd-nav-container {
+      width: 100%;
+      height: 9%;
+      border-radius: 5px ;
+    }
+    .cd-nav-container header {
+      height: 50px;
+      width: 200px;
+      /* padding-top: 3em; */
+    }
+  }
+  
+  .cd-close-nav {
+    /* 'X' close icon */
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    /* set the right position value so that it overlaps the .cd-nav-trigger*/
+    right: 4.8%;
+    top: 45%;
+    bottom: auto;
+     transform: translateY(-50%);
+    /* image replacement */
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+     transition: opacity 0.2s;
+     /* background: rgb(117,50,57); */
+     
+  }
+  .cd-close-nav::after, .cd-close-nav::before {
+    /* lines of 'X' icon */
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 32px;
+    left: 50%;
+    top: 50%;
+    background-color: rgb(117,50,57);
+    backface-visibility: hidden;
+  }
+  .cd-close-nav::after {
+  transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  }
+  .cd-close-nav::before {
+    transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+  }
+  .no-touch .cd-close-nav:hover {
+    opacity: .8;
+
+
+  }
+  
+  .cd-nav {
+    /* background-color: #ffffff; */
+    position: absolute;
+    left: 45%;
+    top: 15%;
+
+  }
+  .cd-nav::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+  .cd-nav li {
+    /* width:170px; */
+    float: left;
+    height: 50px; 
+    /* border: rgb(117,50,57) solid 2px; */
+    border-radius: 5px;
+    padding-top: 5px;
+    /* padding-left: 5px; */
+    /* padding-right: 5px; */
+  }
+ 
+  .cd-nav a{
+    position: relative;
+    display: block;
+    width: 170px;
+    height: 35px;
+    text-align: center;
+    float: left;
+    overflow: hidden;
+    background: transparent;
+    cursor: pointer;
+  
+    }
+    .cd-nav img{
+      opacity: 0.95;
+      transition: opacity 0.35s, transform 0.35s;
+      transform: scale3d(1.05,1.05,1);  
+      /* object-fit: cover; */
+      position: absolute;
+      top: 0%;
+      left: 7%;
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 95%;
+    }
+    .cd-nav div::before{
+      position: absolute;
+      top: 5%;
+      left: 10%;
+      width: 255%;
+      height: 255%;
+      background: rgba(117,50,57,0.7);
+      content: '';
+      transition: transform 0.8s;
+      transform: scale3d(1,0.8,1) rotate3d(0,0,1,54deg) translate3d(0,100%,0);
+    }
+    #history a img{
+      position: absolute;
+      top: -3%;
+      left: 10%;
+    }
+    #opera a img{
+      position: absolute;
+      top: 4%;
+      left: 12%;
+      height: 91%;
+    }
+    #foods a img{
+      position: absolute;
+      top: 1%;
+      left: 10%;
+    }
+    #landspace a img{
+      position: absolute;
+      top: 7%;
+      height: 91%;
+    }
+
+    /* .cd-nav div strong {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      margin: 3em;
+      padding: 0 1em;
+      max-width: 150px;
+      border-right: 4px solid #fff;
+      text-align: right;
+      opacity: 0;
+      transition: opacity 0.35s;
+    } */
+
+    .cd-nav a:hover img{
+      opacity: 0.6;
+	    transform: scale3d(1,1,1);
+    }
+    .cd-nav a:hover div::before {
+      transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,30%,0);
+    }
+
+  .no-touch .cd-nav li a:hover span *,
+  .cd-nav li.cd-selected a span * {
+    /* on hover or if selected - change text and icon color*/
+    stroke: #ffffff;
+  }
+  
+  .cd-nav li.cd-selected {
+    /* position: absolute; */
+    background: rgb(117,50,57,0.7); 
+    background-size: cover;
+    height: 45px;
+    width: 170px;
+  }
+  .cd-nav li.cd-selected  strong{
+    /* position: absolute; */
+    color: #ffffff;
+  }
+  .no-touch .cd-nav li a:hover strong{
+    color: rgba(255, 255, 255);
+  }
+ 
+  
+  .cd-nav span, .cd-nav strong {
+    position: absolute;
+  }
+  .cd-nav span {
+    top: calc(50% - 48px);
+    left: 50%;
+      transform: translateX(-50%);
+    height: 48px;
+    width: 48px;
+  }
+  .cd-nav span * {
+     transition: stroke 0.2s;
+  }
+  .cd-nav strong {
+    position: relative;
+    width: 100%;
+    left: 10%;
+    line-height: 1px;
+    top: 30%;
+    font-size:24px;
+    font-family: fifthfontname;
+    color: rgb(204, 174, 97);
+    transition: color 0.2s;
+    backface-visibility: hidden;
+    z-index: 2;
+  }
+  strong :nth-of-type(1){
+    left: 20%;
+  }
+ 
+  @media screen and (max-width: 1400px) {
+    .cd-nav {
+      /* background-color: #ffffff; */
+      position: absolute;
+      left: 41%;
+      top: 8%;
+  }
+
+  }
+  

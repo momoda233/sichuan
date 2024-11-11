@@ -1,0 +1,281 @@
+
+@font-face{
+        font-family: FifthFontName;
+        src: url(../font/MaShanZheng-Regular.ttf)
+      }
+/*第三页的image设计*/
+.grid {
+  position: absolute;
+  left: 25%;
+	/* margin: 0 auto; */
+max-height: 100vh;
+    text-align: center;
+    bottom: 10px;
+    display: flex;
+    width: 75%;
+    padding: 0% 2%;
+    margin: 0 auto;
+top: 8%;
+    box-sizing: border-box;
+    /*可以放置两个带边框的框，可以呈现出带有指定宽度和高度的框，并把边框和内边距放入框中。*/
+    /* height: 80vh; */
+    font-weight: 700;
+    z-index: 2;
+    font-family: fifthFontName;
+
+}
+
+
+.grid div img {
+	position: relative;
+	display: block;
+	height: 100%;
+	width: 100%;
+	opacity: 0.8;
+}
+
+.grid div .inside {
+	/* padding: 40px; */
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 20px;
+	backface-visibility: hidden;
+}
+
+.grid  div .inside::before,
+.grid div .inside::after {
+	pointer-events: none;
+}
+
+
+.grid div h2 {
+	/* word-spacing: -0.15em; */
+    font-weight: 800;
+    left: 10%;
+}
+
+.grid div h2,
+.grid div p {
+	margin: 0;
+}   
+
+.grid div p {
+	letter-spacing: 1px;
+    font-size: 1.5em;
+    width:60%;
+    
+}
+
+.grid li {
+	position: relative;
+	float: left;
+	overflow: hidden;
+	margin: 30px 15px 0px 15px;
+	height: 90%;
+	width: 25%;
+	background: transparent;
+	text-align: center;
+  cursor: pointer;
+  
+}
+li.img-box {
+    background: rgb(117,50,57,0.9);
+    flex: 1;
+    overflow: hidden;
+    transition: 0.5s;
+    /*去掉图片就会直接显示*/
+    margin: 0 15px 0 15px;
+    line-height: 0;
+    border-radius: 5px;
+    z-index: 2;
+    background-color: rgb(0, 0, 0);
+
+}
+
+.img-box > img {
+    width: 100%;
+    /* height: calc(100% - 8%); */
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+    border-radius:5px
+  }
+  
+  .img-box > span {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    font-family: fifthfontname;
+    font-size: 36px;
+    display: block;
+    color:rgba(255, 255, 255, 0.9);
+    /* text-align: center; */
+    height: 8vh;
+    letter-spacing: 10px;
+    line-height: 1.7;
+    transition: opacity 1s, transform 1s;
+ 
+  }
+
+li.img-box .inside {
+    text-align: left;
+    position: relative;
+    bottom: 90%;
+    left: 5%;
+    width: 90%;
+}
+
+.border{
+  /* border:  3px solid rgb(204,174,97); */
+  background: url(../images/index/09.png);
+  background-size: 95%;
+  background-repeat: no-repeat;
+  /* border-radius: 5px; */
+  width:90%;
+  height: 240%;
+  position: absolute;
+  top: -7%;
+  left: 5%;
+  opacity: 1;
+  transition: opacity 0.5s, transform 0.5s;
+}
+.grid:hover .border{
+  opacity: 0;
+  /* transition: opacity 1s, transform 1s; */
+}
+
+.grid:hover span{
+  opacity: 0;
+}
+li.img-box h2 {
+    position: relative;
+    left: 30%;
+  padding: 0.5em 0;
+  font-size: 2em;
+  opacity: 0;
+}
+
+li.img-box p {
+	display: inline-block;
+	margin: 0 0  0.25em 1em;
+	padding: 0.4em 1em;
+  /* background: rgba(255,255,255,0.9); */
+  width: 820px;
+  height: 20px;
+  position: relative;
+  left: 30px;
+  /* color:rgb(117,50,57); */
+  color: rgb(204,174,97,0.8);
+  letter-spacing: 5px;
+  text-transform: none;
+  line-height: 2em;
+	font-weight: 300;
+	font-size: 1.5em;
+	transition: opacity 0.5s, transform 0.5s;
+	transform: translate3d(-960px,0,0);
+}
+.img-box:hover {
+    flex: 1 1 50%;
+    /*让所有弹性盒模型对象的子元素都有相同的长度，忽略它们内部内容,
+    鼠标滑过后显示图片大小可占整个大的div的60%*/
+  }
+  
+  .img-box:hover > img {
+    width: 100%;
+    height: 100%;
+  }
+
+li.img-box:hover p:first-child {
+	transition-delay: 0.3s;
+}
+li.img-box:hover p:nth-of-type(2) {
+	transition-delay: 0.9s;
+}
+li.img-box:hover p:nth-of-type(3) {
+	transition-delay: 1.5s;
+}
+li.img-box:hover p:nth-of-type(4) {
+	transition-delay: 2.1s;
+}
+li.img-box:hover p:nth-of-type(5) {
+	transition-delay:2.7s;
+}
+li.img-box:hover p:nth-of-type(6) {
+	transition-delay:3.3s;
+}
+
+li.img-box:hover img {
+	opacity: 0.4;
+	transform: scale3d(1.1,1.1,1);
+}
+
+li.img-box:hover p {
+	opacity: 1;
+	transform: translate3d(0,0,0);
+}
+li.img-box:hover h2{
+  opacity: 1;
+  /* transform: translateY  (10px); */
+}
+
+.pause {
+  background-position: 0 bottom !important;
+}
+.mscBtn {
+  position: fixed;
+  left: 50px;
+  top: 50px;
+  height: 50px;
+  width: 50px;
+  display: block;
+  z-index: 3;
+}
+@media screen and (max-width: 1400px) {
+  .img-box > span {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    font-family: fifthfontname;
+    font-size: 32px;
+    display: block;
+    color: rgba(255, 255, 255, 0.9);
+    /* text-align: center; */
+    height: 8vh;
+    letter-spacing: 10px;
+    line-height: 1.7;
+    transition: opacity 1s, transform 1s;
+}
+li.img-box p {
+  display: inline-block;
+  margin: 0 0 0.25em 1em;
+  padding: 0.4em 1em;
+  /* background: rgba(255,255,255,0.9); */
+  width: 820px;
+  height: 20px;
+  position: relative;
+  left: 30px;
+  /* color: rgb(117,50,57); */
+  color: rgb(204,174,97,0.8);
+  letter-spacing: 5px;
+  text-transform: none;
+  line-height: 2em;
+  font-weight: 300;
+  font-size: 1.2em;
+  transition: opacity 0.5s, transform 0.5s;
+  transform: translate3d(-960px,0,0);
+}
+.border {
+  /* border: 3px solid rgb(204,174,97); */
+  background: url(../images/index/09.png);
+  background-size: 95%;
+  background-repeat: no-repeat;
+  /* border-radius: 5px; */
+  width: 90%;
+  height: 255%;
+  position: absolute;
+  top: -7%;
+  left: 5%;
+  opacity: 1;
+  transition: opacity 0.5s, transform 0.5s;
+}
+}
