@@ -36,7 +36,7 @@
 		<section class="cd-fixed-bg  bg-2">
 
 			<div id="content_1-1" class="demop">
-				<p><span>&nbsp;&nbsp;&nbsp;&nbsp;天府之国简介</span>
+				<p><span style="color: white;">&nbsp;&nbsp;&nbsp;&nbsp;天府之国简介</span>
 					<br>
 					<br>
 					天府之国，即四川，简称川或蜀，位于中国西南地区内陆，省会为成都市。四川地区先秦时曾分属巴蜀两国，故别称“巴蜀”，后因宋代在此设置“川峡四路”而得名四川。四川历史悠久，风光秀丽，物产丰富，因此四川含有“天府之国”美誉。
@@ -221,61 +221,128 @@
 			}
 		});
 	});
-	document.getElementById("page-1").onclick = function () {
-		window.location.href = "history.html";
-	}
-	document.getElementById("page-2").onclick = function () {
-		window.location.href = "Opera.html";
-	}
-	document.getElementById("page-3").onclick = function () {
-		window.location.href = "foods.html";
-	}
-	document.getElementById("page-4").onclick = function () {
-		window.location.href = "landspace.html";
+
+	const pages = {
+		"page-1": "history.html",
+		"page-2": "Opera.html",
+		"page-3": "foods.html",
+		"page-4": "landspace.html"  // 请注意：修正了原代码中的拼写错误
+	};
+
+	for (const [id, url] of Object.entries(pages)) {
+		const element = document.getElementById(id);
+		if (element) {
+			element.onclick = () => { 
+				window.location.href = url; 
+			};
+		}
 	}
 
 	/**
-	 * 分辨率宽度小于1400时
+	 * 分辨率宽度大于1400时
 	 * @type {number}
 	 */
 	var windowsWidth = window.screen.width; //屏幕分辨率高度
 	if (windowsWidth > 1400) {
+		if(windowsWidth==2560){
+			document.querySelectorAll('.border').forEach(element => {
+				element.className = 'border-2k';
+			});
+			document.querySelectorAll('.inside').forEach(element => {
+				element.className = 'inside-2k';
+			});
+			document.querySelectorAll('.img-box').forEach(element => {
+				element.className = 'img-box-2k';
+			});
+			const elements = [
+				{ oldId: 'heading', newId: 'heading-2k' },
+				{ oldId: 'heading-1', newId: 'heading-1-2k' },
+				{ oldId: 'heading-up', newId: 'heading-up-2k' },
+				{ oldId: 'heading-down', newId: 'heading-down-2k' },
+				{ oldId: 'content_1-1', newId: 'content_1-1-2k' },
+				{ oldId: 'content_1-3', newId: 'content_1-3-2k' },
+				{ oldId: 'box-2', newId: 'box-2-2k' },
+				{ oldId: 'box-3', newId: 'box-3-2k' },
+				{ oldId: 'content_4-1', newId: 'content_4-1-2k' },
+				{ oldId: 'content_4', newId: 'content_4-2k' },
+				{ oldId: 'content_4-2', newId: 'content_4-2-2k' },
+				{ oldId: 'content_4-3', newId: 'content_4-3-2k' },
+				{ oldId: 'content_4-4', newId: 'content_4-4-2k' },
+			];
 
+			elements.forEach(({ oldId, newId }) => {
+			const element = document.getElementById(oldId);
+				if (element) {
+					element.id = newId;
+				}
+			});
+		}
 		$(function () {
-			$('#return-top').hide();
-			$('#content_1-3').hide();
-			$('#content_1-4').hide();
-			$('#content_1-5').hide();
-			$('#content_1-6').hide();
-			$('#content_1-7').hide();
-			$('#box-2').hide();
-			$('#box-3').hide();
+			const elementsToHide = [
+				'#return-top',
+				'#box-2','#box-2-2k',
+				'#box-3','#box-3-2k',
+				'#content_1-1','#content_1-1-2k',
+				'#content_1-3','#content_1-3-2k',
+				'#content_1-4','#content_1-4-2k',
+				'#content_1-5','#content_1-5-2k',
+				'#content_1-6','#content_1-6-2k',
+				'#content_1-7','#content_1-7-2k',
+			];
+
+			elementsToHide.forEach(selector => $(selector).hide());
+			
+			// 合并
+			function fadeInElements(selectors, duration) {
+				$(selectors.join(', ')).fadeIn(duration);
+			}
+
+			function fadeOutElements(selectors, duration) {
+				$(selectors.join(', ')).fadeOut(duration);
+			}
+
 			$(function () {
 				$(window).scroll(function () {
 					if ($(window).scrollTop() > 100) {
-						$('#heading-up').fadeOut(300);
-						$('#heading-down').fadeOut(300);
+						const fadeInArr_2000 = [
+							'#content_1-1','#content_1-1-2k',
+						];
+						const fadeInArr_1500 = [
+							'#content_1-4','#content_1-4-2k','#content_1-5','#content_1-5-2k',
+							'#content_1-6','#content_1-6-2k',
+						];
+						const fadeOutArr = [
+							'#heading-up','#heading-down',
+						]
+						fadeInElements(fadeInArr_2000, 2000);
+						fadeInElements(fadeInArr_1500, 1500);
+						fadeOutElements(fadeOutArr, 300);
 						$('#return-top').fadeIn(300);
-						$('#content_1-3').slideDown(2000);
-						$('#content_1-4').fadeIn(1500);
-						$('#content_1-5').fadeIn(1500);
-						$('#content_1-6').fadeIn(1500);
-						$('#content_1-7').fadeIn(2500);
+						$('#content_1-3').slideDown(2000);$('#content_1-3-2k').slideDown(2000);
+						$('#content_1-7').fadeIn(2500);$('#content_1-7-2k').fadeIn(2500);
+
 						if ($(window).scrollTop() > 1420) {
-							$('#box-2').fadeIn(3000);
-							$('#content_2-4').fadeIn(3000);
-							$('#box-3').fadeIn(1500);
+							$('#box-2').fadeIn(3000);$('#box-2-2k').fadeIn(3000);
+							$('#content_2-4').fadeIn(3000);$('#content_2-4-2k').fadeIn(3000);
+							$('#box-3').fadeIn(1500);$('#box-3-2k').fadeIn(1500);
 						} else {
-							$('#box-2').fadeOut(500);
-							$('#content_2-4').fadeOut(500);
-							$('#box-3').fadeOut(500);
+							const fadeOutArr_500 = [
+								'#box-2','#box-2-2k','#content_2-4','#content_2-4-2k','#box-3','#box-3-2k',
+							]
+							fadeOutElements(fadeOutArr_500, 500);
 						}
 					} else {
-						$('#heading-up').fadeIn(300);
-						$('#heading-down').fadeIn(300);
-						$('#return-top').fadeOut(200);
-						$('#content_1-3').fadeOut(200);
-						$('#content_1-4').fadeOut(200);
+
+						const fadeInArr = [
+							'#heading-up', '#heading-up-2k', '#heading-down', '#heading-down-2k'
+						];
+						const fadeOutArr = [
+							'#return-top', '#return-top-2k', '#content_1-1', '#content_1-1-2k',
+							'#content_1-3','#content_1-3-2k','#content_1-4','#content_1-4-2k'
+						]
+						fadeInElements(fadeInArr, 300);
+						fadeOutElements(fadeOutArr, 200);
+
 					}
 				});
 				$('#return-top').click(function () {

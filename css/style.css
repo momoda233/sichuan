@@ -134,7 +134,7 @@ section {
 
 
 
-#heading {
+#heading,#heading-2k{
   font-family: fifthFontName;
   font-size: 125px;
   position: absolute;
@@ -147,8 +147,12 @@ section {
   animation: initMoveop 5s forwards;
 
 }
-
-#heading-1 {
+#heading-2k{
+  font-size: 150px;
+  left: 52.5%;
+  top: 28%;
+}
+#heading-1,#heading-1-2k {
   position: absolute;
   top: 67%;
   left: 62%;
@@ -157,7 +161,11 @@ section {
   letter-spacing: 20px;
   animation: initMoveop 5s forwards;
 }
+#heading-1-2k {
+  font-size: 120px;
+  left: 65%;
 
+}
 #heading-2 {
   position: absolute;
   top: 95%;
@@ -166,22 +174,26 @@ section {
   width: 70px;
 }
 
-#heading-up {
+#heading-up, #heading-up-2k {
   position: absolute;
   top: 11%;
   left: 42%;
   width: 50px;
   animation: initMoveup 3s forwards;
 }
-
-#heading-down {
+#heading-up-2k{
+  left: 45%;
+}
+#heading-down, #heading-down-2k {
   position: absolute;
   top: 43%;
   left: 51%;
   width: 50px;
   animation: initMove 3s forwards;
 }
-
+#heading-down-2k{
+  left: 54%;
+}
 
 @keyframes initMoveop {
   0% {
@@ -236,7 +248,7 @@ section {
   z-index: 6;
 }
 
-#content_1-1 {
+#content_1-1 , #content_1-1-2k{
   /* border: solid 3px rgb(204, 174, 97); */
   border-radius: 5px;
   padding: 25px 20px 20px 20px;
@@ -257,6 +269,10 @@ section {
   writing-mode: tb-rl;
   /*竖*/
 }
+#content_1-1-2k{
+  line-height: 65px;
+  font-size: 48px;
+}
 
 #content_1-5 {
   position: absolute;
@@ -273,7 +289,7 @@ section {
   font-size: 48px;
 }
 
-#content_1-3 {
+#content_1-3, #content_1-3-2k {
   position: absolute;
   font-size: 18px;
   color: rgb(204, 174, 97);
@@ -289,6 +305,10 @@ section {
   font-family: fifthFontName;
   opacity: 1;
   z-index: 6;
+}
+#content_1-3-2k{
+  font-size: 31px;
+  line-height: 54px;
 }
 
 #content_1-4 {
@@ -319,7 +339,7 @@ section {
   top: 0%;
 }
 
-#box-2 {
+#box-2,#box-2-2k {
   position: absolute;
   font-size: 48px;
   left: 100px;
@@ -338,8 +358,13 @@ section {
   z-index: 2;
   /* font-family:'fifthfontname'; */
 }
-
-#box-3 {
+#box-2-2k{
+  top: 6%;    
+  left: 3.7%;
+  width: 14%;
+  font-size: 73px;
+}
+#box-3,#box-3-2k {
   position: absolute;
   left: 80px;
   top: 120px;
@@ -355,7 +380,12 @@ section {
   font-family: fifthfontname;
   writing-mode: tb-rl;
 }
-
+#box-3-2k{
+  font-size: 34px;
+  left: 2.6%;
+  top: 16%;
+  width: 15%;
+}
 #content_2-4 {
   position: absolute;
   left: 0%;
@@ -392,7 +422,7 @@ section {
 
 }
 
-#content_4 {
+#content_4 ,#content_4-2k{
   font-size: 42px;
   color: rgb(255, 255, 255);
   position: absolute;
@@ -408,11 +438,14 @@ section {
   writing-mode: tb-rl;
   /*竖*/
 }
+#content_4-2k{
+  font-size: 63px;
+  left: 85%;
+}
 
-#content_4-2 {
+#content_4-2 ,#content_4-2-2k{
   font-size: 22px;
   color: rgb(204, 174, 97);
-  ;
   position: absolute;
   top: 15%;
   left: 15%;
@@ -427,13 +460,23 @@ section {
   /*竖*/
   text-align: left;
 }
+#content_4-2-2k{
+  font-size: 36px;
+  top: 12%;
+  line-height: 75px;
+  letter-spacing: 10px;
+}
 
 #content_4-2 span {
   color: rgb(255, 255, 255);
   font-size: 28px;
 }
+#content_4-2-2k span {
+  color: rgb(255, 255, 255);
+  font-size: 38px;
+}
 
-#content_4-1 {
+#content_4-1,#content_4-1-2k {
   font-size: 25px;
   color: rgb(204, 174, 97);
   ;
@@ -450,8 +493,13 @@ section {
   /*竖*/
   text-align: left;
 }
-
-#content_4-3 {
+#content_4-1-2k{
+  font-size: 38px;
+  left: 65%;
+  line-height: 66px;
+  letter-spacing: 13px;
+}
+#content_4-3, #content_4-3-2k {
   position: absolute;
   left: 82%;
   top: 58%;
@@ -465,8 +513,12 @@ section {
   writing-mode: tb-rl;
   /*竖*/
 }
+#content_4-3-2k{
+  left: 87.5%;
+  font-size: 63px;
+}
 
-#content_4-4 {
+#content_4-4,#content_4-4-2k {
   position: absolute;
   left: 56%;
   top: 58%;
@@ -483,7 +535,12 @@ section {
   text-align: left;
   /* text-indent: 2em; */
 }
-
+#content_4-4-2k{
+  left: 60%;
+  line-height: 65px;
+  letter-spacing: 13px;
+  font-size: 36px;
+}
 #content-4-img {
   position: absolute;
   left: 40.5%;

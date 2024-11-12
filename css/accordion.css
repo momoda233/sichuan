@@ -34,7 +34,7 @@ top: 8%;
 	opacity: 0.8;
 }
 
-.grid div .inside {
+.grid div .inside ,.grid  div .inside-2k{
 	/* padding: 40px; */
 	color: #fff;
 	text-transform: uppercase;
@@ -42,8 +42,12 @@ top: 8%;
 	backface-visibility: hidden;
 }
 
+
 .grid  div .inside::before,
-.grid div .inside::after {
+.grid div .inside::after,
+.grid  div .inside-2k::before,
+.grid div .inside-2k::after
+{
 	pointer-events: none;
 }
 
@@ -78,7 +82,7 @@ top: 8%;
   cursor: pointer;
   
 }
-li.img-box {
+li.img-box, li.img-box-2k  {
     background: rgb(117,50,57,0.9);
     flex: 1;
     overflow: hidden;
@@ -92,7 +96,7 @@ li.img-box {
 
 }
 
-.img-box > img {
+.img-box > img, .img-box-2k > img {
     width: 100%;
     /* height: calc(100% - 8%); */
     height: 100%;
@@ -101,7 +105,7 @@ li.img-box {
     border-radius:5px
   }
   
-  .img-box > span {
+  .img-box > span,  .img-box-2k > span {
     position: absolute;
     top: 20%;
     left: 40%;
@@ -116,8 +120,10 @@ li.img-box {
     transition: opacity 1s, transform 1s;
  
   }
-
-li.img-box .inside {
+  .img-box-2k > span{
+    font-size: 54px;
+  }
+li.img-box .inside, li.img-box-2k .inside-2k  {
     text-align: left;
     position: relative;
     bottom: 90%;
@@ -125,7 +131,14 @@ li.img-box .inside {
     width: 90%;
 }
 
-.border{
+li.img-box-2k .inside-2k {
+  bottom: 100%;
+  width: 100%;
+  height: 100%;
+  left: 0;
+}
+
+.border,.border-2k{
   /* border:  3px solid rgb(204,174,97); */
   background: url(../images/index/09.png);
   background-size: 95%;
@@ -139,7 +152,13 @@ li.img-box .inside {
   opacity: 1;
   transition: opacity 0.5s, transform 0.5s;
 }
-.grid:hover .border{
+.border-2k{
+      width: 97%;
+      height: 100%;
+      top: 0%;
+      left: 1%;
+}
+.grid:hover .border,.grid:hover .border-2k{
   opacity: 0;
   /* transition: opacity 1s, transform 1s; */
 }
@@ -147,15 +166,19 @@ li.img-box .inside {
 .grid:hover span{
   opacity: 0;
 }
-li.img-box h2 {
+li.img-box h2, li.img-box-2k h2  {
     position: relative;
     left: 30%;
-  padding: 0.5em 0;
-  font-size: 2em;
-  opacity: 0;
+    padding: 0.5em 0;
+    font-size: 2em;
+    opacity: 0;
 }
-
-li.img-box p {
+li.img-box h2, li.img-box-2k h2 {
+    left: 20%;
+    font-size: 4em;
+    top: 10%;
+}
+li.img-box p, li.img-box-2k p {
 	display: inline-block;
 	margin: 0 0  0.25em 1em;
 	padding: 0.4em 1em;
@@ -174,46 +197,50 @@ li.img-box p {
 	transition: opacity 0.5s, transform 0.5s;
 	transform: translate3d(-960px,0,0);
 }
-.img-box:hover {
+li.img-box-2k p {
+  font-size: 2.4em;
+  bottom: -100px;
+}
+.img-box:hover,.img-box-2k:hover {
     flex: 1 1 50%;
     /*让所有弹性盒模型对象的子元素都有相同的长度，忽略它们内部内容,
     鼠标滑过后显示图片大小可占整个大的div的60%*/
   }
   
-  .img-box:hover > img {
+  .img-box:hover > img, .img-box-2k:hover > img {
     width: 100%;
     height: 100%;
   }
 
-li.img-box:hover p:first-child {
+li.img-box:hover p:first-child, li.img-box-2k:hover p:first-child{
 	transition-delay: 0.3s;
 }
-li.img-box:hover p:nth-of-type(2) {
+li.img-box:hover p:nth-of-type(2),li.img-box-2k:hover p:nth-of-type(2){
 	transition-delay: 0.9s;
 }
-li.img-box:hover p:nth-of-type(3) {
+li.img-box:hover p:nth-of-type(3), li.img-box-2k:hover p:nth-of-type(3){
 	transition-delay: 1.5s;
 }
-li.img-box:hover p:nth-of-type(4) {
+li.img-box:hover p:nth-of-type(4), li.img-box-2k:hover p:nth-of-type(4){
 	transition-delay: 2.1s;
 }
-li.img-box:hover p:nth-of-type(5) {
+li.img-box:hover p:nth-of-type(5), li.img-box-2k:hover p:nth-of-type(5){
 	transition-delay:2.7s;
 }
-li.img-box:hover p:nth-of-type(6) {
+li.img-box:hover p:nth-of-type(6),li.img-box-2k:hover p:nth-of-type(6) {
 	transition-delay:3.3s;
 }
 
-li.img-box:hover img {
+li.img-box:hover img, li.img-box-2k:hover img {
 	opacity: 0.4;
 	transform: scale3d(1.1,1.1,1);
 }
 
-li.img-box:hover p {
+li.img-box:hover p, li.img-box-2k:hover p {
 	opacity: 1;
 	transform: translate3d(0,0,0);
 }
-li.img-box:hover h2{
+li.img-box:hover h2, li.img-box-2k:hover h2{
   opacity: 1;
   /* transform: translateY  (10px); */
 }

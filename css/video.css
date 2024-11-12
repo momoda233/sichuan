@@ -38,7 +38,8 @@ section video {
     pointer-events: none;
 }
 
-#header {
+#header,
+#header-2k {
     animation: header 1s 4.75s forwards;
     backface-visibility: hidden;
     transform: translate3d(0, 0, 0);
@@ -55,6 +56,10 @@ section video {
     z-index: 2;
 }
 
+#header-2k {
+    top: 24%;
+}
+
 @keyframes header {
     0% {
         transform: translate3d(0, 1em, 0);
@@ -67,7 +72,8 @@ section video {
     }
 }
 
-#up {
+#up,
+#up-2k {
     color: seashell;
     font-size: 32px;
     position: absolute;
@@ -77,7 +83,15 @@ section video {
     letter-spacing: 3px;
 }
 
-.box {
+#up-2k {
+    font-size: 50px;
+    top: 46%;
+    left: 27%;
+    letter-spacing: 5px;
+}
+
+.box,
+.box-2k {
     border-radius: 3px;
     font-size: 30px;
     font-weight: 600;
@@ -89,11 +103,16 @@ section video {
     top: 330px;
     letter-spacing: 10px;
     text-align: center;
-    /* background-color: white; */
     color: white;
     border: 3px solid white;
     padding: 10px 5px 5px 7px;
-    border-radius: 4px;
+    border-radius: 14px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.box-2k {
+    left: 38.5%;
+    top: 57%;
 }
 
 a,
@@ -101,6 +120,11 @@ a:visited,
 a:active {
     color: white;
     text-decoration: none;
+}
+
+a:hover .box {
+    background-color: white;
+    color: rgb(139, 139, 139);
 }
 
 a:hover {
@@ -123,9 +147,14 @@ hr:nth-of-type(2) {
     left: 160px;
 }
 
-.index-logo{
+.index-logo {
     width: 70%;
-  }
+}
+
+.index-logo-2k {
+    width: 85%;
+}
+
 .next-img {
     display: block;
     position: absolute;
@@ -143,6 +172,11 @@ hr:nth-of-type(2) {
     backface-visibility: hidden;
 
 }
+
+.next-img-2k {
+    top: 72%;
+}
+
 /* #index{
     transition: ease color 1s,ease border 1s;
 
@@ -199,6 +233,7 @@ hr:nth-of-type(2) {
 
 
 }
+
 @media screen and (max-width: 500px) {
     section video {
         position: absolute;
@@ -206,8 +241,9 @@ hr:nth-of-type(2) {
         left: -50%;
         width: 200%;
         height: 100%;
-        object-fit:contain;
+        object-fit: contain;
     }
+
     #up {
         font-size: 28px;
         width: 310px;
@@ -219,14 +255,16 @@ hr:nth-of-type(2) {
         left: -40px;
         top: 330px;
         border: 0px;
-        font: size 16px ;
+        font: size 16px;
     }
+
     .index-logo {
         width: 150%;
         position: absolute;
         left: -45px;
         top: 125px;
     }
+
     .next-img {
         top: 410px;
     }
