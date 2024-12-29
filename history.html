@@ -164,14 +164,14 @@
 
       <article class="slide slide--3 js-slide">
         <div class="slide__inner">
-          <div class="slide__sub-title">
+          <div class="slide__sub-title" id="last-slide-content">
             <p>据考古发掘，川东地区史前文化发端于200万年前的</p>
             <p>旧石器时代结束于距今4000多年前，是中国新石器时代母</p>
             <p>系社会的重要遗迹。该文化属母系氏族晚期至父系氏族的</p>
             <p>萌芽阶段,是中国著名原始社会古文化遗址之一。</p>
 
           </div>
-          <h1 class="slide__title">巫山大溪文化</h1>
+          <h1 class="slide__title" id="last-slide-title">巫山大溪文化</h1>
           <div class="slide__img slide__img--proxy"></div>
           <div class="slide__project" id="text-img-5">
             <div>大溪文化陶球</div>
@@ -259,6 +259,21 @@
   <script src="./js/imagesloaded.pkgd.min.js"></script>
   <script src="./js/script-2.js"></script>
   <script>
+    window.onload = function() {
+      const myDiv = document.getElementById('cd-nav');
+      if (window.innerWidth === 2560) {
+          // 获取 div 中的所有 h3 标签
+          const h3Elements = myDiv.getElementsByTagName('h3');
+          
+          // 将每个 h3 标签替换为 h4 标签
+          Array.from(h3Elements).forEach(h3 => {
+            const h4 = document.createElement('h4');  // 创建一个新的 h4 标签
+            h4.innerHTML = h3.innerHTML;  // 将 h3 内容复制到 h4
+            h3.parentNode.replaceChild(h4, h3);  // 替换 h3 为 h4
+          });
+      }
+    };
+
     document.getElementById("history").onclick = function () {
       window.location.href = "history.html";
     }
@@ -283,75 +298,134 @@
       $('.blurred-img').css('opacity', opacityVal);
     });
     $(function () {
-      $('#text-2').hide();
-      $('#title-2').hide();
-      $('#text-img-2').hide();
-      $('#image-1').hide();
-      $('#text-3').hide();
-      $('#title-3').hide();
-      $('#text-img-3').hide();
-      $('#image-2').hide();
-      $('#text-4').hide();
-      $('#title-4').hide();
-      $('#text-img-4').hide();
-      $('#image-3').hide();
+      const elementsToHide = [
+				'#text-2','#title-2','#text-img-2','#image-1','#text-3','#title-3',
+        '#text-img-3','#image-2','#text-4','#title-4','#image-3','#text-img-4',
+			];
+			elementsToHide.forEach(selector => $(selector).hide());
+	    let windowsWidth = window.screen.width; //屏幕分辨率高度
+      window.addEventListener('scroll', function() {
+        const scrollPosition = window.scrollY; // 或者 document.documentElement.scrollTop
+        console.log(scrollPosition); // 每次滚动时打印当前高度
+      });
       $(function () {
+        if(windowsWidth<2560){
+          $(window).scroll(function () {
+            if ($(window).scrollTop() < 120) {
+              $('#heading').fadeIn(1500);
+              $('#heading-2').fadeIn(1500);
+            }
+            if ($(window).scrollTop() > 120) {
+              $('#heading').fadeOut(1500);
+              $('#heading-2').fadeOut(1500);
+            }
+            if ($(window).scrollTop() > 1200) {
+              $('#first-title').fadeOut(1500);
+              $('#text-1').fadeOut(1500);
+            }
+            if ($(window).scrollTop() < 1200) {
+              $('#first-title').fadeIn(1500);
+              $('#text-1').fadeIn(1500);
+            }
+            if ($(window).scrollTop() > 1200 && $(window).scrollTop() < 2200) {
+              $('#text-2').fadeIn(1500);
+              $('#title-2').fadeIn(1500);
+              $('#text-img-2').fadeIn(1500);
+              $('#image-1').fadeIn(1500);
+            }
+            if ($(window).scrollTop() > 2200 || $(window).scrollTop() < 1200) {
+              $('#text-2').fadeOut(1500);
+              $('#title-2').fadeOut(1500);
+              $('#text-img-2').fadeOut(1500);
+              $('#image-1').fadeOut(1500);
+            }
+            if ($(window).scrollTop() > 2000 && $(window).scrollTop() < 3200) {
+              $('#text-3').fadeIn(1500);
+              $('#title-3').fadeIn(1500);
+              $('#text-img-3').fadeIn(1500);
+              $('#image-2').fadeIn(1500);
+            }
+            if ($(window).scrollTop() > 3200 || $(window).scrollTop() < 2000) {
+              $('#text-3').fadeOut(1500);
+              $('#title-3').fadeOut(1500);
+              $('#text-img-3').fadeOut(1500);
+              $('#image-2').fadeOut(1500);
+            }
+            if ($(window).scrollTop() > 3000 && $(window).scrollTop() < 4000) {
+              $('#text-4').fadeIn(1500);
+              $('#title-4').fadeIn(1500);
+              $('#text-img-4').fadeIn(1500);
+              $('#image-3').fadeIn(1500);
+            }
+            if ($(window).scrollTop() < 3000 || $(window).scrollTop() > 4000) {
+              $('#text-4').fadeOut(1500);
+              $('#title-4').fadeOut(1500);
+              $('#text-img-4').fadeOut(1500);
+              $('#image-3').fadeOut(1500);
+            }
+  
+          });
+        }
+        if(windowsWidth==2560){
         $(window).scroll(function () {
-          if ($(window).scrollTop() < 120) {
-            $('#heading').fadeIn(1500);
-            $('#heading-2').fadeIn(1500);
-          }
-          if ($(window).scrollTop() > 120) {
-            $('#heading').fadeOut(1500);
-            $('#heading-2').fadeOut(1500);
-          }
-          if ($(window).scrollTop() > 1200) {
-            $('#first-title').fadeOut(1500);
-            $('#text-1').fadeOut(1500);
-          }
-          if ($(window).scrollTop() < 1200) {
-            $('#first-title').fadeIn(1500);
-            $('#text-1').fadeIn(1500);
-          }
-          if ($(window).scrollTop() > 1200 && $(window).scrollTop() < 2200) {
-            $('#text-2').fadeIn(1500);
-            $('#title-2').fadeIn(1500);
-            $('#text-img-2').fadeIn(1500);
-            $('#image-1').fadeIn(1500);
-          }
-          if ($(window).scrollTop() > 2200 || $(window).scrollTop() < 1200) {
-            $('#text-2').fadeOut(1500);
-            $('#title-2').fadeOut(1500);
-            $('#text-img-2').fadeOut(1500);
-            $('#image-1').fadeOut(1500);
-          }
-          if ($(window).scrollTop() > 2000 && $(window).scrollTop() < 3200) {
-            $('#text-3').fadeIn(1500);
-            $('#title-3').fadeIn(1500);
-            $('#text-img-3').fadeIn(1500);
-            $('#image-2').fadeIn(1500);
-          }
-          if ($(window).scrollTop() > 3200 || $(window).scrollTop() < 2000) {
-            $('#text-3').fadeOut(1500);
-            $('#title-3').fadeOut(1500);
-            $('#text-img-3').fadeOut(1500);
-            $('#image-2').fadeOut(1500);
-          }
-          if ($(window).scrollTop() > 3000 && $(window).scrollTop() < 4000) {
-            $('#text-4').fadeIn(1500);
-            $('#title-4').fadeIn(1500);
-            $('#text-img-4').fadeIn(1500);
-            $('#image-3').fadeIn(1500);
-          }
-          if ($(window).scrollTop() < 3000 || $(window).scrollTop() > 4000) {
-            $('#text-4').fadeOut(1500);
-            $('#title-4').fadeOut(1500);
-            $('#text-img-4').fadeOut(1500);
-            $('#image-3').fadeOut(1500);
-          }
+            if ($(window).scrollTop() > 500) {
+              $('#first-title').fadeOut(1500);
+              $('#text-1').fadeOut(1500);
+              console.log("out text-1");
+              
+            }
+            if ($(window).scrollTop() < 500) {
+              $('#first-title').fadeIn(1500);
+              $('#text-1').fadeIn(1500);
+            }
+            if ($(window).scrollTop() > 700 && $(window).scrollTop() < 1300) {
+              $('#text-2').fadeIn(1500);
+              $('#title-2').fadeIn(1500);
+              $('#text-img-2').fadeIn(1500);
+              $('#image-1').fadeIn(1500);
+            }
+            if ($(window).scrollTop() > 1300 || $(window).scrollTop() < 500) {
+              $('#text-2').fadeOut(1500);
+              $('#title-2').fadeOut(1500);
+              $('#text-img-2').fadeOut(1500);
+              $('#image-1').fadeOut(1500);
+            }
+            if ($(window).scrollTop() > 1300 && $(window).scrollTop() < 1800) {
+              $('#text-3').fadeIn(1500);
+              $('#title-3').fadeIn(1500);
+              $('#text-img-3').fadeIn(1500);
+              $('#image-2').fadeIn(1500);
+            }
+            if ($(window).scrollTop() > 1800 || $(window).scrollTop() < 1300) {
+              $('#text-3').fadeOut(1500);
+              $('#title-3').fadeOut(1500);
+              $('#text-img-3').fadeOut(1500);
+              $('#image-2').fadeOut(1500);
+            }
+            if ($(window).scrollTop() > 1800 && $(window).scrollTop() < 2500) {
+              $('#text-4').fadeIn(1500);
+              $('#title-4').fadeIn(1500);
+              $('#text-img-4').fadeIn(1500);
+              $('#image-3').fadeIn(1500);
 
-        });
-
+              $('#last-slide-content').fadeOut(1500);
+              $('#last-slide-title').fadeOut(1500);
+              $('#text-img-5').fadeOut(1500);
+              $('#image-4').fadeOut(1500);
+            }
+            if ($(window).scrollTop() > 2500 ) {
+              $('#text-4').fadeOut(1500);
+              $('#title-4').fadeOut(1500);
+              $('#text-img-4').fadeOut(1500);
+              $('#image-3').fadeOut(1500);
+           
+              $('#last-slide-content').fadeIn(1500);
+              $('#last-slide-title').fadeIn(1500);
+              $('#text-img-5').fadeIn(1500);
+              $('#image-4').fadeIn(1500);
+            }
+          });
+        }
       })
     })
 

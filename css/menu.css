@@ -115,7 +115,7 @@
     top:25%;
     /* background-position:center; */
   }
-  .cd-nav-container h3 {
+  .cd-nav-container h3 ,  .cd-nav-container h4{
     font-size: 32px;
     font-weight: bold;
     font-family: fifthfontname;
@@ -124,6 +124,10 @@
     text-align: center;
     position: relative;
     top:0px;
+  }
+  .cd-nav-container h4{
+    font-size: 38px;
+    left: 50px;
   }
   #index :first-child {
     color: rgb(117,50,57,0.8);
@@ -145,6 +149,15 @@
     }
   }
   
+  @media only screen and (min-width: 2560px) {
+    .cd-nav-container {
+      height: 5%;
+    }
+    .cd-nav {
+      transform: scale(1.25);
+      left: 60% !important;
+    }
+  }
   .cd-close-nav {
     /* 'X' close icon */
     position: absolute;

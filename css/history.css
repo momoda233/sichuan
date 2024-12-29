@@ -217,6 +217,51 @@ figure {
   line-height: 1.5em;
   letter-spacing: 5px;
 }
+@media only screen and (min-width: 2560px) {
+  #first-title{
+    top: -250px;
+  }
+  .slide__img--proxy{
+    bottom: 500px;
+  }
+  .slide__sub-title{
+        top: -114% !important;
+        left: 200px;
+  }
+  #title-2{
+    top: -181% !important;
+    font-size: 60px;
+    left: 850px;
+  }
+  .slide__project {
+    left: 50%;
+    font-size: 2em;
+  }
+  #image-1,#image-2{
+    left: 300px;
+    transform: scale(1.25);
+    top: -15px;
+  }
+  #img-2,#img-3,#img-4, #img-5{
+    left: 666px !important;
+    transform: scale(1.25);
+    top: 0;
+  }
+  #last-slide-content{
+    left: -600px;
+  }
+  #last-slide-title{
+    top: -400px;
+    font-size: 60px;
+    left: 0;
+  }
+  #text-img-5{
+    left: -160%;
+  }
+  #image-4{
+    left: -520px
+  }
+}
 
 .slide__img--proxy :first-child {
   text-indent: 2.5em;
