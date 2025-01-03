@@ -72,7 +72,7 @@ body {
   top: 10%;
   text-align: center;
   font-weight: 500;
-  font-size: 28px;
+  font-size: 2em;
   line-height: 1.5;
   width: 100%;
   letter-spacing: 1.5px;
@@ -278,11 +278,11 @@ body {
   /* background-size: cover; */
 }
 .slider__inner{
-  background-size: 1730px 940px;
+  background-size: calc(100% - 240px) calc(100% - 240px);
   transition:background-size 0.5s ease-in-out;
 } 
 .slider__inner:hover{
-  background-size:1900px 1050px;
+  background-size:calc(100% - 100px) calc(100% - 120px);
   /* transform: scale(0.75); */
   transition: background-size 0.5s ease-in-out;
 }
@@ -359,5 +359,10 @@ body {
   .slider__content h1 {
     top: 8%;
     font-size: 26px;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  .slider__content h1{
+    font-size: 2.4em;
   }
 }

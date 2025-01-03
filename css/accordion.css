@@ -108,7 +108,7 @@ li.img-box, li.img-box-2k  {
   .img-box > span,  .img-box-2k > span {
     position: absolute;
     top: 20%;
-    left: 40%;
+    left: 45%;
     font-family: fifthfontname;
     font-size: 36px;
     display: block;
@@ -145,7 +145,7 @@ li.img-box-2k .inside-2k {
   background-repeat: no-repeat;
   /* border-radius: 5px; */
   width:90%;
-  height: 240%;
+  height: 252%;
   position: absolute;
   top: -7%;
   left: 5%;

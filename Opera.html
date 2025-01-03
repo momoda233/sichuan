@@ -114,25 +114,43 @@
 	</nav>
 </body>
 <script>
-	document.getElementById("history").onclick = function () {
-		window.location.href = "history.html";
-	}
-	document.getElementById("opera").onclick = function () {
-		window.location.href = "Opera.html";
-	}
-	document.getElementById("foods").onclick = function () {
-		window.location.href = "foods.html";
-	}
-	document.getElementById("landspace").onclick = function () {
-		window.location.href = "landspace.html";
+	const pages = {
+		"history": "history.html",
+		"opera": "Opera.html",
+		"foods": "foods.html",
+		"landspace": "landspace.html" 
+	};
+
+	for (const [id, url] of Object.entries(pages)) {
+		const element = document.getElementById(id);
+		if (element) {
+			element.onclick = () => { 
+				window.location.href = url; 
+			};
+		}
 	}
 	/**
-	 * 分辨率宽度小于1400时
+	 * 分辨率宽度大于1400时
 	 * @type {number}
 	 */
 	var windowsWidth = window.screen.width; //屏幕分辨率高度
 	if (windowsWidth > 1400) {
 		$(function () {
+			if(windowsWidth==2560){
+				document.querySelectorAll('.cd-content.first').forEach(element => {
+					element.className = 'cd-content first-2k';
+				});
+				document.querySelectorAll('.cd-content.second').forEach(element => {
+					element.className = 'cd-content second-2k';
+				});
+				document.querySelectorAll('.cd-content.third').forEach(element => {
+					element.className = 'cd-content third-2k';
+				});
+				document.querySelectorAll('.cd-content.forth').forEach(element => {
+					element.className = 'cd-content forth-2k';
+				});
+				document.getElementById('p-2').style.top = '10%';
+			}
 
 			// $('#headline-2').hide();
 			$('#p-2').hide();

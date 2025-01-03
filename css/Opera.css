@@ -94,7 +94,7 @@ html{
       color: rgb(220, 220, 220);
       width: 70%;
       position: absolute;
-      top: 5%;
+      top: 10%;
       left: 2%;
     }
     #headline-2{
@@ -109,7 +109,7 @@ html{
     }
     #headline-4{
       color: rgb(255, 255, 255);
-      top: -25%;
+      top: -15%;
       left: 20%;
     }
     #headline-2 span{
@@ -124,19 +124,22 @@ html{
         font-family: "kaiti";
     }
 
-    .cd-content.first p{
+    .cd-content.first p, .cd-content.first-2k p{
       color: rgb(220, 220, 220);
       font-size: 30px;
       position: absolute;
       left: -2%;
-      top: -0px;
+      top: 15%;
       width: 82%;
       text-indent: 2em;
       letter-spacing: 5px;
       line-height: 1.5em;
       font-family: fifthfontname;
     }
-   
+    .cd-content.first-2k p{
+      font-size: 45px;
+      top: 10%;
+    }
    
     .content-img-1{
       width: 45%;
@@ -145,7 +148,7 @@ html{
       bottom: 25px;
       border-radius: 10px;
     }
-    .cd-content.second p{
+    .cd-content.second p, .cd-content.second-2k p{
       font-size: 34px;
       position: absolute;
       width: 80%;
@@ -155,10 +158,12 @@ html{
       line-height: 1.5em;
       font-family: fifthfontname;
     }
-   
+    .cd-content.second-2k p{
+      font-size: 45px;
+    }
     #p-2{
       color: rgb(220, 220, 220);
-      top: 20%;
+      top: 15%;
     }
     .content-img-2{
       width: 45%;
@@ -167,7 +172,7 @@ html{
       top: -130px;
       border-radius: 10px;
     }
-    .cd-content.third p{
+    .cd-content.third p, .cd-content.third-2k p{
       position: relative;
       width: 80%;
       top: 60px;
@@ -184,9 +189,11 @@ html{
       font-size: 30px ;
       font-weight: 600;
     }
-
+    .cd-content.third-2k p{
+      font-size: 45px;
+    }
     
-    .cd-content.forth p{
+    .cd-content.forth p,  .cd-content.forth-2k p{
       position: relative;
       width: 81%;
       top: 5%;
@@ -199,25 +206,34 @@ html{
       text-indent: 2em;
       font-family: fifthfontname;
     }
-    .cd-content.forth h2 {
+    .cd-content.forth h2,.cd-content.cd-content.forth-2k h2 {
       position: relative;
       left: -3%;
-      top: -40px;
+      top: -15%;
       font-size: 56px;
       font-weight: 600;
       font-family: fifthfontname;
       color: white;
       letter-spacing: 10px;
-
     }
-    .cd-content.forth h2 :nth-of-type(2){
+    .cd-content.cd-content.forth-2k h2 {
+      top: -15%;
+    }
+    .cd-content.forth-2k p{
+      font-size: 45px;
+      top: 0;
+    }
+    .cd-content.forth h2 :nth-of-type(2),  .cd-content.forth-2k  h2 :nth-of-type(2){
             color:rgb(197,184,120)
     }
     
-    .cd-content.forth p span{
+    .cd-content.forth p span,  .cd-content.forth-2k p span{
       color:rgb(197,184,120);
       font-size: 30px ;
       font-weight: 600;
+    }
+    .cd-content.forth-2k p span{
+      font-size: 45px;
     }
     @media screen and (max-width: 1400px) {
       #headline,#headline-2,#headline-3,#heading-4{

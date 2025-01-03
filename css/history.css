@@ -105,12 +105,17 @@ figure {
 
 .slide--1 {
   align-items: flex-end;
+  left: 2930px;
 }
 
 .slide--2 {
   align-items: flex-end;
 }
-
+.first-page{
+  position: absolute;
+  top: -90px !important;
+  left: 1300px !important;
+}
 .slide--3 {
   align-items: flex-end;
 }
@@ -121,7 +126,7 @@ figure {
   margin-top: 0vw;
   margin-right: 25vw;
   width: 40%;
-  top: -30px;
+  top: -130px;
 }
 
 .slide__sub-title {
@@ -177,7 +182,7 @@ figure {
 .slide__img {
   position: relative;
   padding-top: 60%;
-
+  right: 26vw;
   height: 100%;
   width: 100%;
 }
@@ -217,9 +222,27 @@ figure {
   line-height: 1.5em;
   letter-spacing: 5px;
 }
+@media screen and (max-width: 1920px) {
+  div#image-2 {
+    right: 19vw;
+  }
+  div#image-3 {
+    right: 10vw;
+  }
+  figure#img-4 {
+    left: 33vw;
+  }
+  div#image-4 {
+    right: 2vw;
+  }
+  figure#img-5 {
+    left: 32vw;
+  }
+}
+
 @media only screen and (min-width: 2560px) {
   #first-title{
-    top: -250px;
+    /* top: -250px; */
   }
   .slide__img--proxy{
     bottom: 500px;
@@ -228,24 +251,31 @@ figure {
         top: -114% !important;
         left: 200px;
   }
-  #title-2{
-    top: -181% !important;
+  #title-2, #title-3, #title-4, #last-slide-title{
+    top: -15vw !important;
     font-size: 60px;
-    left: 850px;
+    left: 41vw;
   }
   .slide__project {
     left: 50%;
     font-size: 2em;
   }
   #image-1,#image-2{
-    left: 300px;
+    left:  -1vw;
     transform: scale(1.25);
-    top: -15px;
+    top: 4vw;
   }
   #img-2,#img-3,#img-4, #img-5{
-    left: 666px !important;
+    left: 550px;
     transform: scale(1.25);
     top: 0;
+  }
+  #img-2{
+    left: 21.5vw;
+  }
+  #img-3{
+    left: 21vw;
+    top: 1vw;
   }
   #last-slide-content{
     left: -600px;
@@ -258,8 +288,23 @@ figure {
   #text-img-5{
     left: -160%;
   }
-  #image-4{
-    left: -520px
+
+  div#image-2 {
+    left: -15vw;
+}
+  div#image-3 {
+    left: -28vw;
+    top: 4vw;
+  }
+  figure#img-4 {
+    left: 33vw;
+  }
+  div#image-4 {
+    left: -45vw;
+    top: 4vw;
+  }
+  figure#img-5 {
+    left: 33vw;
   }
 }
 
@@ -381,22 +426,22 @@ img {
 
 #text-img-2 :nth-of-type(1) {
   position: absolute;
-  left: 12%;
+  left: 9%;
 }
 
 #text-img-2 :nth-of-type(2) {
   position: absolute;
-  left: 74%;
+  left: 60%;
 }
 
 #text-img-3 :nth-of-type(1) {
   position: absolute;
-  left: 15%;
+  left: 12%;
 }
 
 #text-img-3 :nth-of-type(2) {
   position: absolute;
-  left: 77%;
+  left: 60%;
 }
 
 #text-img-4 :nth-of-type(1) {

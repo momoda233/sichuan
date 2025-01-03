@@ -177,7 +177,7 @@ section {
 #heading-up, #heading-up-2k {
   position: absolute;
   top: 11%;
-  left: 42%;
+  left: 43%;
   width: 50px;
   animation: initMoveup 3s forwards;
 }
@@ -255,7 +255,7 @@ section {
   position: absolute;
   left: 18%;
   top: 13%;
-  font-size: 24px;
+  font-size: 32px;
   width: 20%;
   height: 72%;
   text-align: left;
@@ -271,7 +271,7 @@ section {
 }
 #content_1-1-2k{
   line-height: 65px;
-  font-size: 48px;
+  font-size: 43px;
 }
 
 #content_1-5 {
@@ -291,7 +291,7 @@ section {
 
 #content_1-3, #content_1-3-2k {
   position: absolute;
-  font-size: 18px;
+  font-size: 22px;
   color: rgb(204, 174, 97);
   left: 58%;
   top: 65%;
@@ -366,12 +366,12 @@ section {
 }
 #box-3,#box-3-2k {
   position: absolute;
-  left: 80px;
+  left: 108px;
   top: 120px;
   /* border-radius: 5px; */
   /* height: 60px; */
   width: 230px;
-  font-size: 20px;
+  font-size: 24px;
   color: rgb(204, 174, 97);
   z-index: 3;
   letter-spacing: 3px;
@@ -444,7 +444,7 @@ section {
 }
 
 #content_4-2 ,#content_4-2-2k{
-  font-size: 22px;
+  font-size: 29px;
   color: rgb(204, 174, 97);
   position: absolute;
   top: 15%;
@@ -477,7 +477,7 @@ section {
 }
 
 #content_4-1,#content_4-1-2k {
-  font-size: 25px;
+  font-size: 30px;
   color: rgb(204, 174, 97);
   ;
   position: absolute;
@@ -522,7 +522,7 @@ section {
   position: absolute;
   left: 56%;
   top: 58%;
-  font-size: 23px;
+  font-size: 26px;
   color: rgb(204, 174, 97);
   height: 30%;
   width: 25%;
@@ -558,7 +558,7 @@ section {
   /* top: 65px; */
   width: 85%;
   height: 100%;
-  font-size: 22px;
+  font-size: 24px;
   /* text-indent:2em; */
   line-height: 1.8em;
   letter-spacing: 3px;

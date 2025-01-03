@@ -219,23 +219,47 @@
   </nav>
   <script src="js/script.js"></script>
   <script>
-    document.getElementById("food-picture").onclick = function () {
-      window.location.href = "food-picture.html";
-    }
-    document.getElementById("history").onclick = function () {
-      window.location.href = "history.html";
-    }
-    document.getElementById("opera").onclick = function () {
-      window.location.href = "Opera.html";
-    }
-    document.getElementById("foods").onclick = function () {
-      window.location.href = "foods.html";
-    }
-    document.getElementById("landspace").onclick = function () {
-      window.location.href = "landspace.html";
-    }
+    const pages = {
+		"history": "history.html",
+		"opera": "Opera.html",
+		"foods": "foods.html",
+		"food-picture": "food-picture.html",
+		"landspace": "landspace.html"  
+    };
 
+	for (const [id, url] of Object.entries(pages)) {
+		const element = document.getElementById(id);
+		if (element) {
+			element.onclick = () => { 
+				window.location.href = url; 
+			};
+		}
+	}
 
+	const windowsWidth = window.screen.width; //屏幕分辨率高度
+  if (windowsWidth > 1400) {
+		$(function () {
+			if(windowsWidth==2560){
+				document.querySelectorAll('.skw-page__content').forEach(element => {
+					element.className = 'skw-page__content-2k';
+				});
+
+				document.querySelectorAll('.foods-text').forEach(element => {
+					element.className = 'foods-text-2k';
+				});
+				// document.querySelectorAll('.cd-content.forth').forEach(element => {
+				// 	element.className = 'cd-content forth-2k';
+				// });
+				document.getElementById('food-picture').style.top = '45%';
+				document.getElementById('food-picture').style.right = '20%';
+        document.querySelectorAll('.foods-first').forEach(element => {
+          element.style.width = "800px";
+          element.style.fontSize = '35px';
+				});
+			}
+
+		})
+	} 
     // console.log(($('.skw-page-2 foods-text').scrollTop()));
     // console.log(($('#food-picture').scrollTop()));
   </script>

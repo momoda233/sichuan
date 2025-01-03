@@ -99,11 +99,11 @@ main {
 
 .content--center {
 	flex: 1;
-	max-width: calc(90vw - 260px);
+	max-width: calc(100vw - 260px);
 	order: 3;
 	position: relative;
 	/* top: 20%; */
-	/* left: 13%; */
+	left: 8%;
 	margin: 100px  0 0 200px ;
 	height: 40vw;
 	overflow-y: scroll;
@@ -337,7 +337,7 @@ main {
 	position: relative;
 	z-index: 2;
 	display: block;
-	width: 1250px;
+	width: 100%;
 	margin-left: 50px;
 }
 

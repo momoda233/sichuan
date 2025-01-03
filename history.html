@@ -94,7 +94,7 @@
 
       </article>
 
-      <article class="slide slide--2 js-slide">
+      <article class="slide slide--2 js-slide first-page">
         <div class="slide__inner">
           <div class="slide__sub-title"></div>
           <h1 class="slide__title">
@@ -111,7 +111,7 @@
         </div>
       </article>
 
-      <article class="slide slide--3 js-slide">
+      <article class="slide slide--3 js-slide jinshayizhi">
         <div class="slide__inner">
           <div class="slide__sub-title" id="text-2">
             <p>金沙遗址主体文化遗存的时代约商代晚期至西周时期</p>
@@ -128,7 +128,7 @@
         </div>
       </article>
 
-      <article class="slide slide--1 js-slide">
+      <article class="slide slide--1 js-slide sanxingdui">
         <div class="slide__inner">
           <div class="slide__sub-title" id="text-3">
             <p>三星堆文明上承古蜀宝墩，下启金沙历时约2000年被</p>
@@ -145,7 +145,7 @@
         </div>
       </article>
 
-      <article class="slide slide--2 js-slide">
+      <article class="slide slide--2 js-slide gushubaodun">
         <div class="slide__inner">
           <div class="slide__sub-title" id="text-4">
             <p>宝墩文化是迄今为止能追溯到的最早的考古学文化，</p>
@@ -162,7 +162,7 @@
         </div>
       </article>
 
-      <article class="slide slide--3 js-slide">
+      <article class="slide slide--3 js-slide wushandaxi">
         <div class="slide__inner">
           <div class="slide__sub-title" id="last-slide-content">
             <p>据考古发掘，川东地区史前文化发端于200万年前的</p>
@@ -299,133 +299,179 @@
     });
     $(function () {
       const elementsToHide = [
-				'#text-2','#title-2','#text-img-2','#image-1','#text-3','#title-3',
-        '#text-img-3','#image-2','#text-4','#title-4','#image-3','#text-img-4',
-			];
-			elementsToHide.forEach(selector => $(selector).hide());
-	    let windowsWidth = window.screen.width; //屏幕分辨率高度
+        ".jinshayizhi", ".sanxingdui", ".gushubaodun", ".wushandaxi", 
+        "#image-1", "#image-2", "#image-3", "#image-4",
+      ];
+			elementsToHide.forEach(selector => $(selector).find('*').fadeOut(0));
+	    
+      let windowsWidth = window.screen.width; //屏幕分辨率高度
       window.addEventListener('scroll', function() {
         const scrollPosition = window.scrollY; // 或者 document.documentElement.scrollTop
         console.log(scrollPosition); // 每次滚动时打印当前高度
       });
       $(function () {
+
+        if(windowsWidth == 2560){
+            $(window).scroll(function () {
+              if ($(window).scrollTop() < 120) {
+                $('#heading').fadeIn(1500);
+                $('#heading-2').fadeIn(1500);
+                
+                $('#image-1').find('*').fadeOut(0);
+              }
+              if ($(window).scrollTop() > 120&& $(window).scrollTop() < 900) {
+                //古蜀 显示，金沙隐藏，三星堆隐藏，古蜀宝墩隐藏 ，巫山大溪隐藏
+                $('.sanxingdui').find('*').fadeOut(1500);
+                $('#image-1').find('*').fadeOut(1500);
+                $('.jinshayizhi').find('*').fadeOut(1500);
+                $('#image-2').find('*').fadeOut(1500);
+                $('.gushubaodun').find('*').fadeOut(1500);
+                $('#image-3').find('*').fadeOut(1500);
+                $('.wushandaxi').find('*').fadeOut(1500);
+                $('#image-4').find('*').fadeOut(1500);
+                $('.first-page').fadeIn(1500);
+              }
+              if ($(window).scrollTop() >= 900 && $(window).scrollTop() < 1600) {
+                //古蜀隐藏 ，金沙显示，三星堆隐藏，古蜀宝墩隐藏 ，巫山大溪隐藏
+                $('.jinshayizhi').find('*').fadeIn(1500);
+                $('#image-1').find('*').fadeIn(1500);
+
+                $('.first-page').fadeOut(1500);
+                $('.sanxingdui').find('*').fadeOut(1500);
+                $('#image-2').find('*').fadeOut(1500);
+                $('.gushubaodun').find('*').fadeOut(1500);
+                $('#image-3').find('*').fadeOut(1500);
+                $('.wushandaxi').find('*').fadeOut(1500);
+                $('#image-4').find('*').fadeOut(1500);
+              }
+              if ($(window).scrollTop() >= 1600 && $(window).scrollTop() < 2200) {
+                //古蜀隐藏 ，金沙隐藏，三星堆显示，古蜀宝墩隐藏 ，巫山大溪隐藏
+                $('.jinshayizhi').find('*').fadeOut(1500);
+                $('#image-1').find('*').fadeOut(1500);
+                $('.gushubaodun').find('*').fadeOut(1500);
+                $('#image-3').find('*').fadeOut(1500);
+                $('.wushandaxi').find('*').fadeOut(1500);
+                $('#image-4').find('*').fadeOut(1500);
+
+                $('.sanxingdui').find('*').fadeIn(1500);
+                $('#image-2').find('*').fadeIn(1500);
+              }
+              if ($(window).scrollTop() >= 2200 && $(window).scrollTop() < 2700) {
+                //古蜀隐藏 ，三星堆隐藏 ，金沙隐藏，古蜀宝墩显示，巫山大溪隐藏
+                $('.sanxingdui').find('*').fadeOut(1500);
+                $('#image-2').find('*').fadeOut(1500);
+                $('.jinshayizhi').find('*').fadeOut(1500);
+                $('#image-1').find('*').fadeOut(1500);
+                $('.wushandaxi').find('*').fadeOut(1500);
+                $('#image-4').find('*').fadeOut(1500);
+
+                $('.gushubaodun').find('*').fadeIn(1500);
+                $('#image-3').find('*').fadeIn(1500);
+              }
+              if ($(window).scrollTop() >= 2700 && $(window).scrollTop() < 3400) {
+                //古蜀隐藏 ，三星堆隐藏 ，金沙隐藏，古蜀宝墩隐藏，巫山大溪显示，
+                $('#image-3').find('*').fadeOut(1500);
+                $('.gushubaodun').find('*').fadeOut(1500);
+                $('.sanxingdui').find('*').fadeOut(1500);
+                $('#image-2').find('*').fadeOut(1500);
+                $('.jinshayizhi').find('*').fadeOut(1500);
+                $('#image-1').find('*').fadeOut(1500);
+
+                $('.wushandaxi').find('*').fadeIn(1500);
+                $('#image-4').find('*').fadeIn(1500);
+              }
+              
+
+          });
+          document.querySelectorAll('.wushandaxi').forEach(element => {
+            element.style.left = "4130px";
+            element.style.top = "3vw";
+          });
+          document.querySelectorAll('.gushubaodun').forEach(element => {
+            element.style.left = "2800px";
+            element.style.top = "3vw";
+          });
+          document.querySelectorAll('.sanxingdui').forEach(element => {
+            element.style.left = "2200px";
+            element.style.top = "3vw";
+          });
+          document.querySelectorAll('.jinshayizhi').forEach(element => {
+            element.style.left = "1600px";
+            element.style.top = "3vw";
+          });
+          
+          // document.getElementById('first-page').style.left = '1300px';
+
+          // 2560px css
+          document.getElementById('heading').style.top = '10vw';
+          document.getElementById('heading-2').style.top = '23vw';
+          document.querySelectorAll('.slide__inner').forEach(item=>{
+            item.style.top = '-10vw';
+          })
+          document.querySelectorAll('.slide__title').forEach(item=>{
+            item.style.top = '-10vw';
+          })
+          document.querySelectorAll('.slide__sub-title').forEach(item=>{
+            item.style.top = '-7vw';
+          })
+          document.querySelectorAll('.slide__img--proxy').forEach(item=>{
+            item.style.bottom = '320px';
+          })
+          document.querySelectorAll('.slide__project').forEach(item=>{
+            item.style.top = '13vw';
+          })
+        };
+
         if(windowsWidth<2560){
           $(window).scroll(function () {
             if ($(window).scrollTop() < 120) {
               $('#heading').fadeIn(1500);
               $('#heading-2').fadeIn(1500);
+              $('#image-1').find('*').fadeOut(0);
             }
-            if ($(window).scrollTop() > 120) {
-              $('#heading').fadeOut(1500);
-              $('#heading-2').fadeOut(1500);
+            if ($(window).scrollTop() > 120&& $(window).scrollTop() < 500) {
+              $('.sanxingdui').find('*').fadeOut(1500);
+              $('.jinshayizhi').find('*').fadeOut(1500);
+              $('.first-page').fadeIn(1500);
+              $('#image-1').find('*').fadeOut(1500);
+              $('#image-2').find('*').fadeOut(1500);
             }
-            if ($(window).scrollTop() > 1200) {
-              $('#first-title').fadeOut(1500);
-              $('#text-1').fadeOut(1500);
+            if (($(window).scrollTop() > 500) && $(window).scrollTop() < 1400) {
+              $('.jinshayizhi').find('*').fadeIn(1500);
+              $('#image-1').find('*').fadeIn(1500);
+              $('.first-page').fadeOut(1500);
             }
-            if ($(window).scrollTop() < 1200) {
-              $('#first-title').fadeIn(1500);
-              $('#text-1').fadeIn(1500);
+            if ($(window).scrollTop() > 1400 && $(window).scrollTop() < 2400) {
+              // $('.jinshayizhi-child').find('*').fadeOut(1500);
+              $('.sanxingdui').find('*').fadeIn(1500);
+              $('#image-2').find('*').fadeIn(1500);
             }
-            if ($(window).scrollTop() > 1200 && $(window).scrollTop() < 2200) {
-              $('#text-2').fadeIn(1500);
-              $('#title-2').fadeIn(1500);
-              $('#text-img-2').fadeIn(1500);
-              $('#image-1').fadeIn(1500);
+            if ($(window).scrollTop() > 2400 && $(window).scrollTop() < 2900) {
+              // $('.sanxingdui').find('*').fadeIn(1500);
+              $('.gushubaodun').find('*').fadeIn(1500);
+              $('#image-3').find('*').fadeIn(1500);
             }
-            if ($(window).scrollTop() > 2200 || $(window).scrollTop() < 1200) {
-              $('#text-2').fadeOut(1500);
-              $('#title-2').fadeOut(1500);
-              $('#text-img-2').fadeOut(1500);
-              $('#image-1').fadeOut(1500);
+            if ($(window).scrollTop() > 2900 && $(window).scrollTop() < 3400) {
+              $('.wushandaxi').find('*').fadeIn(1500);
+              $('#image-4').find('*').fadeIn(1500);
             }
-            if ($(window).scrollTop() > 2000 && $(window).scrollTop() < 3200) {
-              $('#text-3').fadeIn(1500);
-              $('#title-3').fadeIn(1500);
-              $('#text-img-3').fadeIn(1500);
-              $('#image-2').fadeIn(1500);
-            }
-            if ($(window).scrollTop() > 3200 || $(window).scrollTop() < 2000) {
-              $('#text-3').fadeOut(1500);
-              $('#title-3').fadeOut(1500);
-              $('#text-img-3').fadeOut(1500);
-              $('#image-2').fadeOut(1500);
-            }
-            if ($(window).scrollTop() > 3000 && $(window).scrollTop() < 4000) {
-              $('#text-4').fadeIn(1500);
-              $('#title-4').fadeIn(1500);
-              $('#text-img-4').fadeIn(1500);
-              $('#image-3').fadeIn(1500);
-            }
-            if ($(window).scrollTop() < 3000 || $(window).scrollTop() > 4000) {
-              $('#text-4').fadeOut(1500);
-              $('#title-4').fadeOut(1500);
-              $('#text-img-4').fadeOut(1500);
-              $('#image-3').fadeOut(1500);
-            }
-  
-          });
-        }
-        if(windowsWidth==2560){
-        $(window).scroll(function () {
-            if ($(window).scrollTop() > 500) {
-              $('#first-title').fadeOut(1500);
-              $('#text-1').fadeOut(1500);
-              console.log("out text-1");
-              
-            }
-            if ($(window).scrollTop() < 500) {
-              $('#first-title').fadeIn(1500);
-              $('#text-1').fadeIn(1500);
-            }
-            if ($(window).scrollTop() > 700 && $(window).scrollTop() < 1300) {
-              $('#text-2').fadeIn(1500);
-              $('#title-2').fadeIn(1500);
-              $('#text-img-2').fadeIn(1500);
-              $('#image-1').fadeIn(1500);
-            }
-            if ($(window).scrollTop() > 1300 || $(window).scrollTop() < 500) {
-              $('#text-2').fadeOut(1500);
-              $('#title-2').fadeOut(1500);
-              $('#text-img-2').fadeOut(1500);
-              $('#image-1').fadeOut(1500);
-            }
-            if ($(window).scrollTop() > 1300 && $(window).scrollTop() < 1800) {
-              $('#text-3').fadeIn(1500);
-              $('#title-3').fadeIn(1500);
-              $('#text-img-3').fadeIn(1500);
-              $('#image-2').fadeIn(1500);
-            }
-            if ($(window).scrollTop() > 1800 || $(window).scrollTop() < 1300) {
-              $('#text-3').fadeOut(1500);
-              $('#title-3').fadeOut(1500);
-              $('#text-img-3').fadeOut(1500);
-              $('#image-2').fadeOut(1500);
-            }
-            if ($(window).scrollTop() > 1800 && $(window).scrollTop() < 2500) {
-              $('#text-4').fadeIn(1500);
-              $('#title-4').fadeIn(1500);
-              $('#text-img-4').fadeIn(1500);
-              $('#image-3').fadeIn(1500);
+            document.querySelectorAll('.wushandaxi').forEach(element => {
+               element.style.left = "4700px";
+             });
+              document.querySelectorAll('.gushubaodun').forEach(element => {
+               element.style.left = "3600px";
+             });
+              document.querySelectorAll('.sanxingdui').forEach(element => {
+               element.style.left = "2500px";
+             });
+              document.querySelectorAll('.jinshayizhi').forEach(element => {
+               element.style.left = "1400px";
+              });
 
-              $('#last-slide-content').fadeOut(1500);
-              $('#last-slide-title').fadeOut(1500);
-              $('#text-img-5').fadeOut(1500);
-              $('#image-4').fadeOut(1500);
-            }
-            if ($(window).scrollTop() > 2500 ) {
-              $('#text-4').fadeOut(1500);
-              $('#title-4').fadeOut(1500);
-              $('#text-img-4').fadeOut(1500);
-              $('#image-3').fadeOut(1500);
-           
-              $('#last-slide-content').fadeIn(1500);
-              $('#last-slide-title').fadeIn(1500);
-              $('#text-img-5').fadeIn(1500);
-              $('#image-4').fadeIn(1500);
-            }
           });
+
         }
+
       })
     })
 
